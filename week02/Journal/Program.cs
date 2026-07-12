@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
@@ -30,8 +29,7 @@ class Program
             {
                 case 1:
                 string prompt = prompts.GetRandomPrompt();
-
-                Console.WriteLine();
+                  Console.WriteLine();
                 Console.WriteLine(prompt);
 
                 Console.Write(">");
@@ -39,6 +37,7 @@ class Program
 
                 Console.WriteLine("How are you doin today? ");
                 Entry entry = new Entry();
+    
 
                 entry._date = DateTime.Now.ToShortDateString();
                 entry._promptText = prompt;
@@ -132,16 +131,15 @@ class Program
 
         public void SaveToFile(string filename)
         {
-            using (StreamWriter output = new StreamWriter(fileName))
+            using (StreamWriter output = new StreamWriter("fileName"))
             {
                 foreach (Entry entry in _entries)
                 {
                     output.WriteLine(
-                        $"{entry._date}
-                        {entry._promptText}
-                        {entry._entryText}
-                        {entry._mood}"
-                    );
+                          entry._date,
+                          entry._promptText, 
+                          entry._entryText, 
+                          entry._mood);
                 }
             }
 
@@ -165,26 +163,23 @@ class Program
 
                 Entry entry = new Entry();
 
-                entry._date = parts[0];
+                {entry._date = parts[0];
                 entry._promptText = parts[1];
                 entry._entryText = parts[2];
-
-                if (parts.Length > 3)
-                {
-                    entry._mood = parts[3]
-                }
+                entry._mood = parts[3]};
                 _entries.Add(entry);
             }
 
             Console.WriteLine("Journal loaded successfully.");
-            {
-                Public void DisplayCount()
-                {
-                    Console.WriteLine($"Total Entries: {_entries.Count}");
-                }
-
-            }
         }
+
+        public void DisplayCount()
+        {
+            Console.WriteLine($"Total Entries: {_entries.Count}");
+        }
+
+            
+        
 
 
 
