@@ -163,10 +163,10 @@ class Program
 
                 Entry entry = new Entry();
 
-                {entry._date = parts[0];
+                entry._date = parts[0];
                 entry._promptText = parts[1];
                 entry._entryText = parts[2];
-                entry._mood = parts[3]};
+                entry._mood = parts[3];
                 _entries.Add(entry);
             }
 
@@ -196,7 +196,7 @@ class Program
             "What life lession did i learn today?",
             "What did i do to manage my time today?",
             "What help did i ask the holy spirit for today?",
-            "What made me simle today?",
+            "What made me smile today?",
             "What did i do to help someone today?",
 
         };
