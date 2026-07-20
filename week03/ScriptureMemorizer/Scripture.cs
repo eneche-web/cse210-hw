@@ -4,10 +4,10 @@ using System.Linq;
 
 public class Scripture
 {
-    private Reference_reference;
+    private Reference _reference;
     private List<Word>_words;
 
-    public Scripture(ReferenceEqualityComparer reference, string text)
+    public Scripture(Reference reference, string text)
     {
         _reference = reference;
         _words = new List<Word>();
@@ -26,7 +26,7 @@ public class Scripture
         }
         return $"{_reference.GetDisplayText()} {text}";
     }
-    public void HiddenRandomWords(int numberToHide)
+    public void HideRandomWords(int numberToHide)
     {
         Random random = new Random();
 

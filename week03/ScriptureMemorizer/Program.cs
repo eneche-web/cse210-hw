@@ -11,7 +11,7 @@ class Program
         List<Scripture> scriptures = new List<Scripture>()
         {
             new Scripture(
-                new Reference("John",3,16),"For God so love the world that he gave his only begotten Son that who so ever believeth in him should not perish but have everlasting life."
+                new Reference("John", 3, 16),"For God so love the world that he gave his only begotten Son that who so ever believeth in him should not perish but have everlasting life."
             ),
             new Scripture(
                 new Reference("Proverbs",3,5,6),"Trust in the lord with all your heart and lean not unto thine own understanding in all your ways acknowledge him and he shall direct thy paths."
@@ -21,7 +21,7 @@ class Program
             )
         };
         Random random = new Random();
-        Scripture scripture = scripture[random.Next(scripture.count)];
+        Scripture scripture = scriptures[random.Next(scriptures.Count)];
 
         while(!scripture.IsCompletelyHidden())
         {
@@ -34,7 +34,7 @@ class Program
             {
                 break;
             }
-            scripture.HidenRandomWords(3);
+            scripture.HideRandomWords(3);
         }
 
         Console.Clear();
